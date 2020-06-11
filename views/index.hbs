@@ -1,0 +1,31 @@
+<h2>Маршруты</h2>
+<form action="./" method="POST">
+
+    <div class="input-field">
+        <input type="text" name="filter">
+        <label>Найти нужный маршрут</label>
+    </div>
+
+    <button type="submit" class="btn">Поиск</button>
+</form>
+{{#if ways.length}}
+<ul>
+    {{#each ways}}
+    <li>
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{number}} - «{{name}}»</span>
+                        <p>{{way}}</p>
+                        <input type="hidden" value="{{_id}}" name="id">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<p>Такого маршрута нет</p>
+{{/if}}
